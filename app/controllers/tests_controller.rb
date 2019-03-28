@@ -13,13 +13,8 @@ class TestsController < Simpler::Controller
   end
 
   def show
-    set_test
-    status 200
+    set_header('Content-Type', 'text/plain')
+    render plain: "Showing test #{params[:id]}. Now is #{Time.now}"
   end
-
-  def set_test
-    @params = params
-  end
-
-
+  
 end

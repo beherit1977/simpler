@@ -54,5 +54,9 @@ module Simpler
       controller.make_response(action)
     end
 
+    def make_not_found_response
+      Rack::Response.new('Not found!', 404,{'Content-Type' => 'text/plain'})
+    end
+
   end
 end
